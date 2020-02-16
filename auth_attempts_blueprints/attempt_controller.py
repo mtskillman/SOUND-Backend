@@ -44,14 +44,13 @@ def sender_attempt():
         token = encode_auth_token(resource_id)
         db_connection.store_token_in_db(resource_id, token)
         return make_response(
-            {'access-token': token}, 200
+            {'access_token': token}, 200
         )
     else:
         return make_response(
             {'result': "failed-login",
              'resource-id': resource_id}, 400
         )
-
 
 
 @attempt_blueprint.route('/receiver-attempt', methods=['POST'])
