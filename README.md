@@ -1,4 +1,5 @@
 # SOUND Backend
+Secret Key for testing: "OKP352FJMFDFBDG2", TOTP, SHA1 algorithm, 6 digits. Use resource-id of 2.<br/>
 Contains two endpoints:
 <br />
 1. /sender-attempt:

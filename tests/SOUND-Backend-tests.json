@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "6358516a-e296-4521-9dab-fa06aaf764f7",
+		"name": "sound_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sound_sender_auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"code\": \"396749\",\n\t\"resource-id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://mtskillman.pythonanywhere.com/sender-attempt",
+					"protocol": "http",
+					"host": [
+						"mtskillman",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"sender-attempt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sound_receiver_auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODE4ODA1MzcsImlhdCI6MTU4MTg3NjkzNywic3ViIjoyfQ.SW5vusGuSQhXewERckZgB5KZCFlWNguMtOFiScip5_A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://mtskillman.pythonanywhere.com/receiver-attempt",
+					"protocol": "http",
+					"host": [
+						"mtskillman",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"receiver-attempt"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
