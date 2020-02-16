@@ -5,12 +5,14 @@ from database_integration import get_the_private_key
 from database_connection import initialize
 from os import getenv
 from token_handling import encode_auth_token, test_token
+from flask_cors import cross_origin
 
 db_connection = initialize(getenv('connection_url'))
 attempt_blueprint = Blueprint('attempt_api', __name__)
 
 
 @attempt_blueprint.route('/sender-attempt', methods=['POST'])
+@cross_origin(support_credentials=True)
 def sender_attempt():
     body = request.json
     code_to_eval = body.get('code')
@@ -51,11 +53,12 @@ def sender_attempt():
         )
 
 
+
 @attempt_blueprint.route('/receiver-attempt', methods=['POST'])
+@cross_origin(support_credentials=True)
 def receiver_attempt():
     body = request.json
     token = body.get('token')
-
     if not token:
         return make_response(
             {
