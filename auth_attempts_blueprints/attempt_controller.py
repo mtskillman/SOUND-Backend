@@ -32,7 +32,6 @@ def sender_attempt():
     print(type(code_to_eval))
     print(code_to_eval)
     if not secret_key:
-        print('hit')
         return make_response({
             'result': "invalid-resource-id"
         }, 400)
