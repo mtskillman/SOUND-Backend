@@ -1,0 +1,1 @@
+from .obtain_private_key import get_the_private_key
